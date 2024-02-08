@@ -1,0 +1,16 @@
+{% extends "reviews/base.html" %}
+
+{% block content %}
+<form method = "POST">
+    {% csrf_token %}
+    <center>
+        <h3 style = "color:red"> Delete Task </h3>
+        <h5> Are You Sure <b> {{object}} </b> ? </h5>
+        <input type = "submit" value ="Delete">
+        <a href={% url "reviews:list" %}>Cancel</a>
+    </center>
+</form>
+
+{% endblock content %}
+
+

@@ -1,0 +1,32 @@
+{% extends "reviews/base.html" %}
+
+{% block title %}HOME{% endblock title %}
+
+{% block content %}
+<form action="" method = "post">
+    {% csrf_token %}
+    {% comment %} <label for="username">User Name:</label>
+    <input type="text" name="username"> {% endcomment %}
+    {% for i in form  %}
+
+    {{i.label}}
+    {{i}}
+    {{i.errors}}<br> <br>
+    
+    {% endfor %}
+    
+
+    <input type="submit">
+    {% comment %} {% if error %}
+        <h4 style = "color:red"> Form Cannot be empty, Please fill the data </h4>
+    
+    {% endif %}{% endcomment %}
+
+
+
+
+
+
+</form>
+
+{% endblock content %}
